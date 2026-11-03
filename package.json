@@ -1,0 +1,21 @@
+{
+  "name": "mundos-ia",
+  "version": "1.0.0",
+  "description": "Generador de bocetos visuales de mundos imaginarios con IA",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "sena",
+    "node",
+    "ia",
+    "mistral",
+    "flux"
+  ],
+  "author": "Aprendiz SENA",
+  "license": "ISC",
+  "dependencies": {
+    "object-hash": "^3.0.0"
+  }
+}
