@@ -13,13 +13,13 @@ async function describirMundo(mundo) {
     throw new Error('Faltan variables de entorno para el modelo de texto. Revisa tu archivo .env.');
   }
 
-  // Paso 3: Definir el mensaje de sistema con las instrucciones requeridas
+  // Paso 3: Definir el mensaje de sistema con instrucciones claras de arte conceptual
   const mensajeSistema =
-    'You are a creative assistant for a video game studio. ' +
-    'Write a vivid image description of an imaginary world in a single paragraph in English, ' +
-    'between 80 and 120 words. Describe scene, key elements, lighting, composition, and artistic style. ' +
-    'You must explicitly include and describe all 5 specified colors. ' +
-    'Do not include titles, markdown format, or text meant to appear written on the image.';
+    'You are a senior concept artist for a video game studio. ' +
+    'Write a cinematic, highly detailed visual image prompt of an imaginary world in a single paragraph in English, ' +
+    'between 80 and 120 words. Describe scene, scale, architecture, lighting, weather effects, composition, and artistic style. ' +
+    'You MUST translate all 5 given colors to English and explicitly apply each color to a specific element of the scene. ' +
+    'DO NOT USE MARKDOWN, DO NOT USE ASTERISKS (**), DO NOT USE BULLET POINTS, DO NOT USE TITLES, and no text written inside the image. Plain text only.';
 
   // Paso 4: Preparar la peticion POST con fetch nativo y timeout de 30 segundos
   const cuerpoPeticion = {
@@ -39,7 +39,7 @@ async function describirMundo(mundo) {
       'Authorization': `Bearer ${apiKey}`
     },
     body: JSON.stringify(cuerpoPeticion),
-    signal: AbortSignal.timeout(30000)
+    signal: AbortSignal.timeout(60000)
   });
 
   // Paso 5: Manejar los codigos de estado HTTP de la API
@@ -92,3 +92,4 @@ async function describirMundo(mundo) {
 module.exports = {
   describirMundo
 };
+

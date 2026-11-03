@@ -178,3 +178,4 @@ Para completar los entregables solicitados en la sección 6 de la guía del SENA
    git ls-files
    ```
    *Captura:* Confirma que el archivo `.env` **no** aparece en la lista de archivos controlados por Git.
+
